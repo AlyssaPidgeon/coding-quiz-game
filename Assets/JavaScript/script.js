@@ -1,5 +1,5 @@
 const startButton = document.querySelector(".button");
-// const userScore = document.querySelector("#view-high-score");
+const userScore = document.querySelector("#view-high-score");
 
 let questions = [
   {
@@ -27,7 +27,7 @@ let answerbuttons = document.querySelectorAll(".answer-button");
 startButton.addEventListener("click", function (event) {
   event.preventDefault();
   nextQuestion();
-
+  console.log(nextQuestion);
   //}
 });
 
@@ -51,6 +51,21 @@ for (let i = 0; i < answerbuttons.length; i++) {
 }
 
 // WHEN I answer a question incorrectly THEN time is subtracted from the clock
+
+
+//show response of selected answer to question: ?IF function 
+
+if (answerbuttons == answer) {
+  alert("Your answer is correct!");
+  //add deduction funtion here? 
+} else {
+  alert("Your answer is incorrect!");
+}
+
+// function showResponse (event) {
+//   event.preventDefault();
+//   const response = "Your answer is " +
+// }
 
 let timeLeft = math.floor(secondsLeft);
 console.log(timeLeft);
@@ -86,16 +101,12 @@ saveButton.addEventListener("click", funtion(event) {
 
 //?two javsacripts per HTML - JS code to render message of user inital input?
 
+// //?seperate HTML for Highscores page?
+// userScore.addEventListener("click", funtion() {
+//   //use window.location.href to reference second HTML to display local data high score results?
+//   window.location.href = #
 
-
-
-
-//?seperate HTML for Highscores page?
-userScore.addEventListener("click", funtion() {
-  //use window.location.href to reference second HTML to display local data high score results?
-  window.location.href = #
-
-})
+// })
 
 
 
