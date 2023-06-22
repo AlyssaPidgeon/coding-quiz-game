@@ -1,5 +1,5 @@
 const startButton = document.querySelector(".button");
-// const userScore = document.querySelector("#view-high-score");
+
 const buttons = document.getElementById("buttons");
 const submitScore = document.querySelector(".user-score");
 var timeInterval = null;
@@ -91,9 +91,8 @@ submitScore.addEventListener("click", function (event) {
   console.log(userInitials);
   localStorage.setItem("initials", userInitials);
   localStorage.setItem("score", userScore);
+  // window.location.href = "./userscore.html";
 });
-
-// use ?window.prompt? to submit high score:
 
 //time - start timer when game starts - needs to count down and display count down. games ends when timer =0 secons
 let timeE1 = document.querySelector("#time");
@@ -124,9 +123,3 @@ function countdown() {
 
 //call function
 countdown();
-
-// userScore.addEventListener("click", funtion() {
-//   //use window.location.href to reference second HTML to display local data high score results?
-//   window.location.href = #
-
-// })
