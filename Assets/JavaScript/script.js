@@ -2,6 +2,8 @@ const startButton = document.querySelector(".button");
 // const userScore = document.querySelector("#view-high-score");
 const buttons = document.getElementById("buttons");
 const submitScore = document.querySelector(".user-score");
+var timeInterval = null;
+var initials = document.querySelector("#initials");
 
 let questions = [
   {
@@ -34,21 +36,23 @@ startButton.addEventListener("click", function (event) {
 });
 
 function nextQuestion() {
-  index++;
-  console.log(index);
-  document.querySelector("#question").textContent = questions[index].prompt;
-  document.querySelector("#ans-btn-one").textContent = questions[index].option1;
-  document.querySelector("#ans-btn-two").textContent = questions[index].option2;
-  document.querySelector("#ans-btn-three").textContent =
-    questions[index].option3;
-  document.querySelector("#ans-btn-four").textContent =
-    questions[index].option4;
-
-  console.log(this.textContent);
-  console.log(questions[index - 1].answer);
-
-  if ((questions == )) {
+  if (questions.length - 1 == index) {
     endGame();
+  } else {
+    index++;
+    console.log(index);
+    document.querySelector("#question").textContent = questions[index].prompt;
+    document.querySelector("#ans-btn-one").textContent =
+      questions[index].option1;
+    document.querySelector("#ans-btn-two").textContent =
+      questions[index].option2;
+    document.querySelector("#ans-btn-three").textContent =
+      questions[index].option3;
+    document.querySelector("#ans-btn-four").textContent =
+      questions[index].option4;
+
+    console.log(this.textContent);
+    console.log(questions[index - 1].answer);
   }
 }
 
@@ -71,11 +75,10 @@ buttons.addEventListener("click", checkAnswer);
 // WHEN the game is over THEN I can save my initials and score
 
 function endGame(event) {
-  event.preventDefault();
-  //incorrect? 
-  if (secondsLeft > index) {
-    displayMessage("Congratulations you final score is :" + secondsLeft);
+  if (secondsLeft > 0) {
+    alert("Congratulations you final score is :" + secondsLeft);
   }
+  clearInterval(timeInterval);
 }
 
 submitScore.addEventListener("click", function (event) {
@@ -88,7 +91,6 @@ submitScore.addEventListener("click", function (event) {
 });
 
 // use ?window.prompt? to submit high score:
-//   congratulations you final score is : ___time remaining. Enter your initials: . Submit button.
 
 // //method: ?save button on prompt?
 
@@ -101,7 +103,7 @@ let secondsLeft = 60;
 
 function countdown() {
   //setinterval method to call function to be executed by 1000ms
-  var timeInterval = setInterval(function () {
+  timeInterval = setInterval(function () {
     if (secondsLeft > 1) {
       //shows remaining seconds on Time element of web page:
       timeE1.textContent = secondsLeft + " seconds remaining";
