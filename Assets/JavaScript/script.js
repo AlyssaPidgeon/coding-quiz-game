@@ -31,6 +31,7 @@ var answerbuttons = document.querySelectorAll(".answer-button");
 startButton.addEventListener("click", function (event) {
   event.preventDefault();
   event.target.style.display = "none";
+  submitScore.style.visibility = "hidden";
   nextQuestion();
   console.log(index);
 });
@@ -79,23 +80,20 @@ function endGame(event) {
     alert("Congratulations you final score is :" + secondsLeft);
   }
   clearInterval(timeInterval);
+  submitScore.style.visibility = "visible";
+  buttons.style.visibility = "hidden";
 }
 
 submitScore.addEventListener("click", function (event) {
   event.preventDefault();
   const userScore = secondsLeft;
-  const initials = initials.input.value();
-
-  localStorage.setItem("initials", initials);
+  const userInitials = initials.value;
+  console.log(userInitials);
+  localStorage.setItem("initials", userInitials);
   localStorage.setItem("score", userScore);
 });
 
 // use ?window.prompt? to submit high score:
-
-// //method: ?save button on prompt?
-
-// saveButton.addEventListener("click", funtion(event) {
-//   event.preventDefault();
 
 //time - start timer when game starts - needs to count down and display count down. games ends when timer =0 secons
 let timeE1 = document.querySelector("#time");
