@@ -22,6 +22,23 @@ let questions = [
     option3: "paranthesis",
     option4: "square brackets",
   },
+  {
+    prompt: "Arrays in JavaScript can be used to store ____ ",
+    answer: "all the above",
+    option1: "numbers and strings",
+    option2: "other arrays",
+    option3: "booleans",
+    option4: "all the above",
+  },
+  {
+    prompt:
+      "String values must be enclosed within ___ when being assigned to variables.",
+    answer: "parentheses",
+    option1: "commas",
+    option2: "curly brackets",
+    option3: "quotes",
+    option4: "parentheses",
+  },
 ];
 
 var index = -1;

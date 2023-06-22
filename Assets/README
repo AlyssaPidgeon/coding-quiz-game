@@ -1,9 +1,14 @@
+# JavaScript Quiz
 
+## Description
 
+This application was completed to perform the function of creating a short multiple choice quiz based of programming adn full stack development content.
+The application was written to include some specific game rules which the user's end score will be a reglection of how fast they can finish the multiple choice quiz and time will be reduced by ten seconds for every wrong answer.
 
+## Installation
 
+The application is deployed using GitHub and is available with this URL:
 
+## License
 
-
-game rules
-score - will reflect how fast the user finished the game and how many correct and incorrect answers. Time will be reduced by ten seconds for every wrong answer. 
+MIT license
